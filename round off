@@ -1,0 +1,42 @@
+Write a program to get a float value from the user and display it in the below-mentioned format. HINT: Use ceil() and floor() functions.
+
+Input Format
+
+Input consists of one float value.
+
+Constraints
+
+1<=n<10^7
+
+Output Format
+
+Output consists of one integer, its highest round off value and its lowest round off value.
+
+Sample Input 0
+
+54.5
+Sample Output 0
+
+54
+55.0
+54.#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float n;
+    
+    // Taking input
+    scanf("%f", &n);
+    
+    // Rounding to nearest integer
+    int rounded_value = (int)n;
+    int ceiling_value = (int)ceil(n);
+    int floor_value = (int)floor(n);
+    
+    // Printing the values
+    printf("%d\n", rounded_value);
+    printf("%.1f\n", ceil(n));
+    printf("%.1f\n", floor(n));
+    
+    return 0;
+}
