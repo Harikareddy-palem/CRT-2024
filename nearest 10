@@ -1,0 +1,49 @@
+Write a program to return the nearest 10 multiple of any given number
+
+Input Format
+
+Read a number
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Print nearest 10 multiple no
+
+Sample Input 0
+
+18
+Sample Output 0
+
+20
+Sample Input 1
+
+134
+Sample Output 1
+
+130
+Sample Input 2
+
+155
+Sample Output 2
+
+160#include <stdio.h>
+
+int main() {
+    int n;
+    int nearest_multiple;
+
+    // Input
+    scanf("%d", &n);
+
+    // Calculate nearest multiple of 10
+    nearest_multiple = (n + 5) / 10 * 10;
+
+    // Output
+    printf("%d\n", nearest_multiple);
+
+    return 0;
+}
+
