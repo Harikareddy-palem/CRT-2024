@@ -1,0 +1,81 @@
+Mr.Kumar went to purchase stationary items for his office. He asked the shopkeeper for a discount. The shopkeeper said that if he purchases more than 200 quantity of the item, then a discount of 20% can be applied on the total bill amount, excluding the GST. Get the Quantity and price per item as an input and calculate and tell whether Mr.Kumar is eligible for the discount and what would be the net amount he has to pay after the discount. Take the GST at 18%. Net Amount = Total bill amount after discount + GST
+
+Input Format
+
+Enter quantity Enter price per unit
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Print the output
+
+Sample Input 0
+
+100
+5
+Sample Output 0
+
+Quantity Ordered 100
+Price per item is Rs.5
+Total Amount = Rs.500
+GST - Rs.90.0
+Net Amount Payable is Rs.590.0
+Sample Input 1
+
+350
+20
+Sample Output 1
+
+Quantity Ordered 350
+Price per item is Rs.20
+Total Amount = Rs.7000
+Discount Earned = Rs.1400.0
+Amount after Discount - Rs.5600.0
+GST - Rs.1008.0
+Net Amount Payable is Rs.6608.0
+#include <stdio.h>
+
+int main() {
+    int quantity;
+    float price_per_unit;
+
+    // Input
+    scanf("%d", &quantity);
+    scanf("%f", &price_per_unit);
+
+    // Calculate total amount without discount
+    float total_amount = quantity * price_per_unit;
+
+    // Check if discount applies
+    float discount_amount = 0.0;
+    if (quantity > 200) {
+        discount_amount = 0.2 * total_amount; // 20% discount
+    }
+
+    // Calculate amount after discount
+    float amount_after_discount = total_amount - discount_amount;
+
+    // Calculate GST (18% on amount after discount)
+    float gst = 0.18 * amount_after_discount;
+
+    // Calculate net amount payable
+    float net_amount_payable = amount_after_discount + gst;
+
+    // Output
+    printf("Quantity Ordered %d\n", quantity);
+    printf("Price per item is Rs.%.0f\n", price_per_unit); // Print price without decimals
+    printf("Total Amount = Rs.%.0f\n", total_amount); // Print total amount without decimals
+
+    if (discount_amount > 0.0) {
+        printf("Discount Earned = Rs.%.1f\n", discount_amount); // Print discount with one decimal place
+        printf("Amount after Discount - Rs.%.1f\n", amount_after_discount); // Print amount after discount with one decimal place
+    }
+
+    printf("GST - Rs.%.1f\n", gst); // Print GST with one decimal place
+    printf("Net Amount Payable is Rs.%.1f\n", net_amount_payable); // Print net amount with one decimal place
+
+    return 0;
+}
