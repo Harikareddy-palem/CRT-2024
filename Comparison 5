@@ -1,0 +1,52 @@
+The comparison is as: A = B, A < B, A > B
+
+Check whether it is Right or Wrong
+
+Input Format
+
+The first line contains the number of test cases t.
+
+Then there are t lines each containing a test case. Each test case contains an Integer followed by a comparison Operator which is again followed by an Integer.
+
+Constraints
+
+1 <= T <= 105
+
+-105 <= A,B <= 105
+
+Output Format
+
+For each test case, If the comparison is true print "Right" else print "Wrong".
+
+The result for each test case needs to be printed in a new line.
+
+Sample Input 0
+
+2
+5 > 4
+6 < 3
+Sample Output 0
+
+Right
+Wrong
+#include <stdio.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);  
+    
+    while (t--) {
+        int A, B;
+        char op;
+        scanf("%d %c %d", &A, &op, &B);
+        if ((op == '>' && A > B) || (op == '<' && A < B) || (op == '=' && A == B)) {
+            printf("Right\n");
+        } else {
+            printf("Wrong\n");
+        }
+    }
+    
+    return 0;
+}
+
+
