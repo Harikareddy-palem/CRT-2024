@@ -1,0 +1,70 @@
+The expression will be one of the following expressions:
+
+A + B = C, A - B = C and A * B = C.
+
+where A, B, C are three numbers, S is the sign between A and B, and Q is the '=' sign.
+
+If the expression is right print "Yes", Otherwise print the right answer of the expression.
+
+Input Format
+
+The first line contains the number of test cases t.
+
+The following lines contain t test cases. One test case per line.
+
+Each test case is in the format A S B Q C, where A,B and C are the numbers, S is the sign between A and B and Q is the '=' sign.
+
+Constraints
+
+1<= T <= 105
+
+0<= A,B <= 102
+
+-105 <= C <=105
+
+Output Format
+
+Print the result of each test case in a new line.
+
+In each test case, If the expression is right print "Yes", Otherwise print the right answer of the expression.
+
+Sample Input 0
+
+2
+5 + 10 = 15
+2 * 10 = 19
+Sample Output 0
+
+Yes
+20
+#include <stdio.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);  
+    
+    while (t--) {
+        int A, B, C;
+        char S, Q;
+        scanf("%d %c %d %c %d", &A, &S, &B, &Q, &C);
+        
+        int result;
+        
+        if (S == '+') {
+            result = A + B;
+        } else if (S == '-') {
+            result = A - B;
+        } else if (S == '*') {
+            result = A * B;
+        }
+    
+        if (result == C) {
+            printf("Yes\n");
+        } else {
+            printf("%d\n", result);
+        }
+    }
+    
+    return 0;
+}
+
