@@ -1,0 +1,36 @@
+Given gender and age of a person, tell if the person is SENIOR CITIZEN or not. A male with age 60 or more years is Senior Citizen. A female with age 58 or more is Senior Citizen.
+
+Input Format
+
+One line of input containing a alphabet G in uppercase or lowercase (Gender of the person) and a number N (Age of the person) separated by space.
+
+Constraints
+
+Gender is given as one of the following options (f, F, m, M)
+
+1 <= N <= 100
+
+Output Format
+
+Print Senior Citizen or Not A Senior Citizen based on given conditions in problem statement.
+
+Sample Input 0
+
+M 60
+Sample Output
+#include <stdio.h>
+
+int main() {
+    char gender;
+    int age;
+    scanf("%c %d", &gender, &age);
+    if ((gender == 'M' || gender == 'm') && age >= 60) {
+        printf("Senior Citizen\n");
+    } else if ((gender == 'F' || gender == 'f') && age >= 58) {
+        printf("Senior Citizen\n");
+    } else {
+        printf("Not A Senior Citizen\n");
+    }
+
+    return 0;
+}
