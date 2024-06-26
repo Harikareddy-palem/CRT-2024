@@ -1,0 +1,33 @@
+Given two numbers, print maximum of two numbers.z
+
+Input Format
+
+A B - Two space separated integers on one line.
+
+Constraints
+
+-1018 <= A, B <= 1018
+
+Output Format
+
+Print maximum of A and B.
+
+Sample Input 0
+
+4 5
+Sample Output 0
+
+5
+Explanation 0
+
+5 is greater than 4 so, Answer is 5
+#include <stdio.h>
+
+int main() {
+    long long A, B;  
+    scanf("%lld %lld", &A, &B);
+    long long max_number = (A > B) ? A : B;
+    printf("%lld\n", max_number);
+
+    return 0;
+}
