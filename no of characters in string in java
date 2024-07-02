@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class CharacterCount {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        
+        int alphabetCount = 0;
+        int uppercaseCount = 0;
+        int lowercaseCount = 0;
+        int digitCount = 0;
+        int specialCharCount = 0;
+        
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+            
+            if (Character.isLetter(ch)) {
+                alphabetCount++;
+                if (Character.isUpperCase(ch)) {
+                    uppercaseCount++;
+                } else {
+                    lowercaseCount++;
+                }
+            } else if (Character.isDigit(ch)) {
+                digitCount++;
+            } else {
+                specialCharCount++;
+            }
+        }
+        
+        System.out.println("Number of alphabets: " + alphabetCount);
+        System.out.println("Number of uppercase letters: " + uppercaseCount);
+        System.out.println("Number of lowercase letters: " + lowercaseCount);
+        System.out.println("Number of digits: " + digitCount);
+        System.out.println("Number of special symbols: " + specialCharCount);
+        
+        scanner.close();
+    }
+}
